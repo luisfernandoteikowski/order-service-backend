@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OrderService.Domain.Services\OrderService.Domain.Services.csproj" />
+    <Folder Include="Core\DTO\" />
+    <Folder Include="DTO\" />
+    <Folder Include="Interface\" />
   </ItemGroup>
 
 </Project>
