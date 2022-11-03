@@ -1,3 +1,7 @@
+using Order.Application.Core.Initialization;
+using OrderService.Domain.Services.Core.Initialization;
+using OrderService.Infra.Core.Initialization;
+
 namespace Order.Api
 {
     public class Program
@@ -12,6 +16,10 @@ namespace Order.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDomainServicesDependencies();
+            builder.Services.AddInfraDependencies();
+            builder.Services.AddApplicationDependencies();
 
             var app = builder.Build();
 
