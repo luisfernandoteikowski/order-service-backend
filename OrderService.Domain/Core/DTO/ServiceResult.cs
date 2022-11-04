@@ -3,6 +3,14 @@ using Microsoft.AspNetCore.Http;
 
 namespace OrderService.Domain.Core.DTO
 {
+    public class ServiceResult<T> : ServiceResult
+    {
+        public T Data { get; set; }
+
+        public ServiceResult() : this(default(T)) { }
+        public ServiceResult(T result) => this.Data = result;
+    }
+
     public class ServiceResult
     {
         public int CodeId { get; set; } = StatusCodes.Status200OK;

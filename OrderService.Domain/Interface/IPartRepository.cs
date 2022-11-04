@@ -1,9 +1,11 @@
-﻿using OrderService.Domain.Core.Interfaces;
+﻿using OrderService.Domain.Core.Entities;
+using OrderService.Domain.Core.Interfaces;
 
 namespace OrderService.Domain.Interface
 {
     public interface IPartRepository :
-        IBaseRepository
+        IBaseRepository,
+        IRepositoryGet<Part>
     {
     }
 }
