@@ -4,12 +4,12 @@ using System.Linq.Expressions;
 
 namespace OrderService.Infra.Core.Repositories
 {
-    public abstract class Repository<T> : IRepository<T>
+    public abstract class InMemoryRepository<T> : IRepository<T>
         where T : BaseEntity
     {
         protected IList<T> _entities;
 
-        public Repository()
+        public InMemoryRepository()
         {
             _entities = new List<T>();
         }
@@ -52,6 +52,17 @@ namespace OrderService.Infra.Core.Repositories
 
             _entities.Add(entity);
 
+            return entity;
+        }
+
+        public async Task<T> Update(T entity)
+        {
+            var existingEntity = Get(x => x.Id == entity.Id).Result.FirstOrDefault();
+            
+            _entities.Remove(existingEntity);
+            
+            await Insert(entity);
+            
             return entity;
         }
     }

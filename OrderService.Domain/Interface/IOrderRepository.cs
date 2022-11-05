@@ -3,11 +3,10 @@ using OrderService.Domain.Core.Interfaces;
 
 namespace OrderService.Domain.Interface
 {
-    public interface IPartRepository :
+    public interface IOrderRepository :
         IBaseRepository,
-        IRepositoryGet<Part>,
-        IRepositoryInsert<Part>,
-        IRepositoryUpdate<Part>
+        IRepositoryGet<Order>,
+        IRepositoryInsert<Order>
     {
     }
 }

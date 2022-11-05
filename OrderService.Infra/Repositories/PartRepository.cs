@@ -4,7 +4,7 @@ using OrderService.Infra.Core.Repositories;
 
 namespace OrderService.Infra.Repositories
 {
-    public class PartRepository : Repository<Part>, IPartRepository
+    public class PartRepository : InMemoryRepository<Part>, IPartRepository
     {
         public PartRepository()
         {
