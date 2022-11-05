@@ -2,11 +2,10 @@
 
 namespace OrderService.Domain.Core.Interfaces
 {
-    public interface IRepository<T> :
-        IRepositoryGet<T>,
-        IRepositoryInsert<T>
+    public interface IRepositoryInsert<T>
         where T : BaseEntity
     {
-        
+        Task<T> Insert(T entity);
+        Task<List<T>> Insert(List<T> entities);
     }
 }

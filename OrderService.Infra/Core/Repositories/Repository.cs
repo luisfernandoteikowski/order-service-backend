@@ -24,5 +24,35 @@ namespace OrderService.Infra.Core.Repositories
 
             return Task.FromResult(result);    
         }
+
+        public async Task<List<T>> Insert(List<T> entities)
+        {
+            var result = new List<T>();
+
+            foreach (var entity in entities)
+                result.Add(await Insert(entity));
+
+            return result;
+        }
+
+        private int GetNextId()
+        {
+            var nextId = 1;
+            if (_entities.Count == 0)
+                return nextId;
+
+            nextId =_entities.MaxBy(x => x.Id).Id + 1;
+            
+            return nextId;
+        }
+
+        public async Task<T> Insert(T entity)
+        {
+            entity.Id = GetNextId();
+
+            _entities.Add(entity);
+
+            return entity;
+        }
     }
 }

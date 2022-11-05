@@ -14,7 +14,7 @@ namespace OrderService.Infra.Core.Initialization
         private static void AddRepositories(this IServiceCollection services)
         {
             IEnumerable<Type> assemblyTypes = typeof(DependencyInjectionServices).Assembly.GetNoAbstractTypes();
-            services.AddImplementations(ServiceLifetime.Scoped, typeof(IBaseRepository), assemblyTypes);
+            services.AddImplementations(ServiceLifetime.Singleton, typeof(IBaseRepository), assemblyTypes);
         }
     }
 }

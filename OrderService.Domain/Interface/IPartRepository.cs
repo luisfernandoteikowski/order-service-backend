@@ -5,7 +5,8 @@ namespace OrderService.Domain.Interface
 {
     public interface IPartRepository :
         IBaseRepository,
-        IRepositoryGet<Part>
+        IRepositoryGet<Part>,
+        IRepositoryInsert<Part>
     {
     }
 }

@@ -10,6 +10,9 @@ namespace OrderService.Domain.DTO
 
         public PartResponse(Part entity)
         {
+            if (entity == null)
+                return;
+
             Id = entity.Id;
             Description = entity.Description;
             Price = entity.Price;
