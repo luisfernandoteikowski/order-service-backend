@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Domain.Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Infra", "OrderService.Infra\OrderService.Infra.csproj", "{002D0692-63B8-4154-BFCB-0114C77FDE83}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Extensions", "OrderService.Extensisons\OrderService.Extensions.csproj", "{F1014169-2604-476A-B059-D754F456750C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Extensions", "OrderService.Extensions\OrderService.Extensions.csproj", "{F1014169-2604-476A-B059-D754F456750C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
