@@ -1,7 +1,6 @@
 ﻿using OrderService.Domain.Core.DTO;
 using OrderService.Domain.DTO;
 using OrderService.Domain.Interface;
-using OrderService.Domain.Services.Part;
 
 namespace OrderService.Domain.Services.Order
 {
@@ -17,11 +16,20 @@ namespace OrderService.Domain.Services.Order
         public async Task<ServiceResult<IEnumerable<OrderResponse>>> Get()
         {
             var result = new ServiceResult<IEnumerable<OrderResponse>>();
+            OrderCalculateItemTotal _orderCalculateItemTotal = new OrderCalculateItemTotalWithoutFees(); 
 
-            var part = await _repository.Get();
+            var orders = await _repository.Get();
 
-            result.Data = part.Select(x => new OrderResponse(x)).ToList();
+            var ordersResponse = new List<OrderResponse>();
+            
+            foreach (var o in orders)
+            {
+                var order = new OrderResponse(o);
+                _orderCalculateItemTotal.SetReponseItemTotal(order);
+                ordersResponse.Add(order);
+            }
 
+            result.Data = ordersResponse;
             return result;
         }
     }

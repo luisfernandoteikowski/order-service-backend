@@ -29,6 +29,7 @@ namespace OrderService.Domain.Services.Order
         {
             var result = new ServiceResult<OrderResponse>();
             ValidationResult results = _validator.Validate(request);
+            OrderCalculateItemTotal _orderCalculateItemTotal = new OrderCalculateItemTotalWithoutFees();
             
             if (!results.IsValid)
             {
@@ -55,32 +56,19 @@ namespace OrderService.Domain.Services.Order
                     foreach (var part in request.Parts)
                     {
                         await _partUpdateService.DecreaseFromStock(part.Id, part.Quantity);
-                        order.Total += CalculateItemTotal(part.Quantity, part.Price.GetValueOrDefault());
+                        order.Total += _orderCalculateItemTotal.CalculateItemTotal(part.Quantity, part.Price.GetValueOrDefault());
                     }
 
                     var newOrder = await _repository.Insert(order);
                     
                     var orderReponse = new OrderResponse(newOrder);
-                    SetReponseItemTotal(orderReponse);
+                    _orderCalculateItemTotal.SetReponseItemTotal(orderReponse);
                     
                     result.Data = orderReponse;
                 }
             }
 
             return result;
-        }
-
-        public decimal CalculateItemTotal(int quantity, decimal price)
-        {
-            return quantity * price;
-        }
-
-        private void SetReponseItemTotal(OrderResponse orderResponse)
-        {
-            foreach (var p in orderResponse.Parts)
-            {
-                p.Total = CalculateItemTotal(p.Quantity, p.Price);
-            }
         }
     }
 }
