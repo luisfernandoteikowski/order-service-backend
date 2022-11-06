@@ -9,6 +9,12 @@ namespace Order.Api.Controllers
     [Route("orders")]
     public class OrderController : CustomController
     {
+        [HttpGet]
+        public async Task<IActionResult> Get([FromServices] IOrderGetFacade orderGetFacade)
+        {
+            return Result(await orderGetFacade.Get());
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromServices] IOrderCreateFacade orderCreateFacade, [FromBody] OrderRequest request)
         {
