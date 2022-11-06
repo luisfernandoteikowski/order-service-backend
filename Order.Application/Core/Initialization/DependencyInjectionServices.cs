@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using OrderService.Extensisons;
+using OrderService.Extensions;
 
 namespace Order.Application.Core.Initialization
 {

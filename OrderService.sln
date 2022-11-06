@@ -14,13 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Domain", "OrderService.Domain\OrderService.Domain.csproj", "{4BD321CA-FF98-43DF-8CF8-0C6A205A44F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Domain", "OrderService.Domain\OrderService.Domain.csproj", "{4BD321CA-FF98-43DF-8CF8-0C6A205A44F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Domain.Services", "OrderService.Domain.Services\OrderService.Domain.Services.csproj", "{B054ACE8-A1EB-44F2-BD70-67B4E706CBA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Domain.Services", "OrderService.Domain.Services\OrderService.Domain.Services.csproj", "{B054ACE8-A1EB-44F2-BD70-67B4E706CBA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Infra", "OrderService.Infra\OrderService.Infra.csproj", "{002D0692-63B8-4154-BFCB-0114C77FDE83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Infra", "OrderService.Infra\OrderService.Infra.csproj", "{002D0692-63B8-4154-BFCB-0114C77FDE83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Extensisons", "OrderService.Extensisons\OrderService.Extensisons.csproj", "{F1014169-2604-476A-B059-D754F456750C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Extensions", "OrderService.Extensisons\OrderService.Extensions.csproj", "{F1014169-2604-476A-B059-D754F456750C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

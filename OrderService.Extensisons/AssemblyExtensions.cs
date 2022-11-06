@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace OrderService.Extensisons
+namespace OrderService.Extensions
 {
     public static class AssemblyExtensions
     {

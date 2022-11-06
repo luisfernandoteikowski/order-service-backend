@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OrderService.Domain.Core.Interfaces;
-using OrderService.Extensisons;
+using OrderService.Extensions;
 
 namespace OrderService.Infra.Core.Initialization
 {
